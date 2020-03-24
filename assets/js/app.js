@@ -170,21 +170,24 @@ let bush1material = new THREE.MeshLambertMaterial( {
    opacity: 0.9,
    transparent: true,
    depthWrite: false,
-    depthTest: false 
+    depthTest: false,
+    side: THREE.DoubleSide
   });
 let bush2material = new THREE.MeshLambertMaterial( {
    map: bush1Texture,
    opacity: 2,
    transparent: true,
    depthWrite: false,
-   depthTest: false 
+   depthTest: false,
+   side: THREE.DoubleSide
 });
 let longBushMaterial = new THREE.MeshLambertMaterial( {
    map: longBushTexture,
    opacity: 2,
    transparent: true,
    depthWrite: false,
-   depthTest: false 
+   depthTest: false ,
+   side: THREE.DoubleSide
    
 });
 let rosesMaterial = new THREE.MeshToonMaterial( {
@@ -192,7 +195,8 @@ let rosesMaterial = new THREE.MeshToonMaterial( {
    opacity: 2,
    transparent: true,
    depthWrite: false,
-   depthTest: false 
+   depthTest: false ,
+   side: THREE.DoubleSide
    
 });
 
@@ -201,7 +205,7 @@ let bush = new THREE.Mesh(bushGeom,longBushMaterial);
 bush.position.set(6.164, -4.569, 9);
 bush.rotation.set(Math.PI,0,0);
 
-let bushGeomAll =  (Math.random()*1.5)+1.5;
+let bushGeomAll =  (Math.random()*1.5)+1;
 
 
 let bushGeom2 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
@@ -209,150 +213,150 @@ let bush2 = new THREE.Mesh(bushGeom2,bush1material);
 bush2.position.set(3.785,-3.425,10.5);
 bush2.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom3 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush3 = new THREE.Mesh(bushGeom3,bush1material);
 bush3.position.set(4.798,-3.449,10.5);
 bush3.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll= (Math.random()*1.5)+1.5;
+bushGeomAll= (Math.random()*1.5)+1;
 let bushGeom4 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush4 = new THREE.Mesh(bushGeom4,bush1material);
 bush4.position.set(5.753,-3.438,10.5);
 bush4.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bush4a = new THREE.Mesh(bushGeom4,bush1material);
 bush4a.position.set(6.739,-3.484,10.5);
 bush4a.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom5 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush5 = new THREE.Mesh(bushGeom5,bush1material);
 bush5.position.set(7.697,-3.521,10.5);
 bush5.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom6 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush6 = new THREE.Mesh(bushGeom6,bush1material);
 bush6.position.set(8.664,-3.466,10.5);
 bush6.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom7 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush7 = new THREE.Mesh(bushGeom7,bush1material);
 bush7.position.set(9.676,-3.466 ,10.5 );
 bush7.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom8 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush8 = new THREE.Mesh(bushGeom8,bush1material);
 bush8.position.set(10.970,-3.466 ,10.5);
 bush8.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom9 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush9 = new THREE.Mesh(bushGeom9,bush1material);
 bush9.position.set(11.968 ,-3.466 ,10.5 );
 bush9.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom10 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush10 = new THREE.Mesh(bushGeom10,bush1material);
 bush10.position.set(12.964 ,-3.466 ,10.5 );
 bush10.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom11 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush11 = new THREE.Mesh(bushGeom11,bush1material);
 bush11.position.set(13.878,-3.425 ,10.5 );
 bush11.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom12 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush12 = new THREE.Mesh(bushGeom12,bush1material);
 bush12.position.set(14.885 ,-3.425 , 10.5);
 bush12.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom13 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush13 = new THREE.Mesh(bushGeom13,bush1material);
 bush13.position.set(3.790 ,-4.404 , 10.5);
 bush13.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom14 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush14 = new THREE.Mesh(bushGeom14,bush1material);
 bush14.position.set(4.797 ,-4.404 ,10.5);
 bush14.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom15 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush15 = new THREE.Mesh(bushGeom15,bush1material);
 bush15.position.set(5.798,-4.404 ,10.5);
 bush15.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom16 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush16 = new THREE.Mesh(bushGeom16,bush1material);
 bush16.position.set(6.803,-4.404 ,10.5);
 bush16.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom17 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush17 = new THREE.Mesh(bushGeom17,bush1material);
 bush17.position.set(7.742 ,-4.404 ,10.5 );
 bush17.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom18 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush18 = new THREE.Mesh(bushGeom18,bush1material);
 bush18.position.set(8.750 ,-4.404 ,10.5);
 bush18.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom19 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush19 = new THREE.Mesh(bushGeom19,bush1material);
 bush19.position.set(9.766 ,-4.404 ,10.5 );
 bush19.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom20 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush20 = new THREE.Mesh(bushGeom20,bush1material);
 bush20.position.set(4.840 ,-5.310 ,10.5);
 bush20.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom21 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush21 = new THREE.Mesh(bushGeom21,bush1material);
 bush21.position.set(5.851 ,-5.386 ,10.5);
 bush21.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom22 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush22 = new THREE.Mesh(bushGeom22,bush1material);
 bush22.position.set(6.837 ,-5.386 , 10.5);
 bush22.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom23 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush23 = new THREE.Mesh(bushGeom23,bush1material);
 bush23.position.set(7.738 ,-5.441 , 10.5);
 bush23.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom24 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush24 = new THREE.Mesh(bushGeom24,bush1material);
 bush24.position.set(8.726,-5.386 , 10.5);
 bush24.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom25= new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush25 = new THREE.Mesh(bushGeom25,bush1material);
 bush25.position.set(5.400,-6.102 , 10.5);
 bush25.rotation.set(0,Math.PI,Math.PI);
 
-bushGeomAll = (Math.random()*1.5)+1.5;
+bushGeomAll = (Math.random()*1.5)+1;
 let bushGeom26 = new THREE.PlaneBufferGeometry(bushGeomAll,bushGeomAll,1,1);
 let bush26 = new THREE.Mesh(bushGeom26,bush1material);
 bush26.position.set(8.697,-6.139 , 10.5);
@@ -397,48 +401,54 @@ upperTrunk.rotation.set(0,0,Math.PI);
 let lowerBillboard1Geom = new THREE.PlaneBufferGeometry(1*3,.50*2,1,1);
 let lowerBillboard1 = new THREE.Mesh(lowerBillboard1Geom, bush1material);
 lowerBillboard1.position.set(1.299,-5.325, 9.7);
-lowerBillboard1.rotation.set(0,Math.PI,0);
+lowerBillboard1.rotation.set(Math.PI,Math.PI,Math.PI);
 
 let lowerBillboard2Geom = new THREE.PlaneBufferGeometry(1*3,.50*2,1,1);
 let lowerBillboard2 = new THREE.Mesh(lowerBillboard2Geom ,bush2material);
 lowerBillboard2.position.set(-0.566,-5.277,9.71);
-lowerBillboard2.rotation.set(0,Math.PI,0);
+lowerBillboard2.rotation.set(Math.PI,Math.PI,Math.PI);
 
 let billboard1Geom = new THREE.BoxBufferGeometry(1.20*3,0.8*2,0.01);
 let billboard1 = new THREE.Mesh(billboard1Geom,bush2material);
 billboard1.position.set(1.961,-6.060,9.6);
+billboard1.rotation.set(0,0,Math.PI);
 
 let billboard2Geom = new THREE.BoxBufferGeometry(1.4*3,0.62*2,0.01);
 let billboard2 = new THREE.Mesh(billboard2Geom,bush2material);
 billboard2.position.set(-0.247,-6.256,9.6);
+billboard2.rotation.set(0,0,Math.PI);
 
 let billboard3Geom = new THREE.BoxBufferGeometry(0.88*3,0.62*2,0.01);
 let billboard3 = new THREE.Mesh(billboard3Geom,bush2material);
 billboard3.position.set(-1.997,-6.3092,9.6);
+billboard3.rotation.set(0,0,Math.PI);
 
 let billboard4Geom = new THREE.PlaneBufferGeometry(1.30*3,0.70*2,1,1);
 let billboard4 = new THREE.Mesh(billboard4Geom,bush2material);
 billboard4.position.set(0.733,-7.362,9.75);
-billboard4.rotation.set(0,Math.PI,0);
+billboard4.rotation.set(0,0,Math.PI);
+
 
 let billboard5Geom = new THREE.PlaneBufferGeometry(1.2*3,0.74*2,1,1);
 let billboard5 = new THREE.Mesh(billboard4Geom,bush2material);
 billboard5.position.set(-1.464,-7.449,9.76);
-billboard5.rotation.set(0,Math.PI,0);
+billboard5.rotation.set(0,0,Math.PI);
 
 let upperBillboard1Geom = new THREE.BoxBufferGeometry(1.40*3,0.62*2,0.01);
 let upperBillboard1 = new THREE.Mesh(upperBillboard1Geom, bush2material);
 upperBillboard1.position.set(0.181,-8.387,9.6);
+upperBillboard1.rotation.set(0,0,Math.PI);
 
 let upperBillboard2Geom = new THREE.PlaneBufferGeometry(0.85*3,0.50*2,1,1);
 let upperBillboard2 = new THREE.Mesh(upperBillboard2Geom,bush2material);
 upperBillboard2.position.set(0.258,-9.284,9.78);
-upperBillboard2.rotation.set(0,Math.PI,0)
+upperBillboard2.rotation.set(0,0,Math.PI)
 
 let billboardFarLeftGeom = new THREE.PlaneBufferGeometry(1.40*3,0.62*2,0.01,1,1,1);
 let billboardFarLeft = new THREE.Mesh(billboardFarLeftGeom, bush2material);
 billboardFarLeft.position.set(-3.169,-6.852,9.192);
-billboardFarLeft.rotation.set(0,Math.PI,0);
+billboardFarLeft.rotation.set(0,0,Math.PI);
+
 
 scene.add(treeTrunk,upperTrunk,billboardFarLeft, lowerBillboard1, lowerBillboard2,billboard1,billboard2,billboard3, billboard4,upperBillboard1,  upperBillboard2, billboard5);
 
@@ -483,10 +493,33 @@ poleBlock4.position.set(4.433,-2.897,-0.785);
 
 scene.add(poleBlock1,poleBlock2,poleBlock3,poleBlock4);
 
+//pole top
 let poleTopGeom = new THREE.CylinderBufferGeometry(0.06,0.07,0.14,8,1);
-let poleTopCylinderGeom =
-let poleTopSphereGeom = 
-let poleTopPointGeom = 
+let poleTopSphereGeom = new THREE.SphereBufferGeometry(0.04,8,6);
+let poleTopPointGeom = new THREE.CylinderBufferGeometry(0, 0.02,0.03,8,1);
+
+let poleTop = new THREE.Mesh(poleTopGeom);
+poleTop.position.set(3.980,-3.230,-0.773);
+
+let poleTop2 = new THREE.Mesh(poleTopGeom);
+poleTop2.position.set(4.875,-3.230,-0.773);
+
+let poleTopSphere = new THREE.Mesh(poleTopSphereGeom);
+poleTopSphere.position.set(3.981,-3.336,-0.778);
+
+let poleTopSphere2 = new THREE.Mesh(poleTopSphereGeom);
+poleTopSphere2.position.set(4.870,-3.336,-0.778);
+
+let poleTopPoint = new THREE.Mesh(poleTopPointGeom);
+poleTopPoint.position.set(3.982,-3.381,-0.778);
+poleTopPoint.rotation.set();
+poleTopPoint.rotation.set(0,0,THREE.Math.degToRad(180));
+
+let poleTopPoint2 = new THREE.Mesh(poleTopPointGeom);
+poleTopPoint2.position.set(4.870,-3.381,-0.778);
+poleTopPoint2.rotation.set(0,0,THREE.Math.degToRad(180));
+
+scene.add(poleTop,poleTop2,poleTopSphere,poleTopSphere2, poleTopPoint,poleTopPoint2 );
 
 //bridge rails
 
@@ -701,6 +734,79 @@ scene.add(archRight,archLeft,archRight2,archLeft2
    ,archUpperRight3,archUpperLeft3
    ,archUpperRight4,archUpperLeft4);
 
+//background structures
+
+//big house
+let houseBodyGeom = new THREE.BoxBufferGeometry(4.50,3.54,2.47);
+let lowerRoofGeom = new THREE.CylinderBufferGeometry(2.02,3.14,0.48,4,1);
+let upperBodyGeom = new THREE.BoxBufferGeometry(2.78,1.14,2.70);
+let upperRoofGeom = new THREE.CylinderBufferGeometry(0,2.30,0.68,4,1);
+
+let houseBody = new THREE.Mesh(houseBodyGeom);
+houseBody.position.set(6.998,-4.872 ,12.274 );
+
+let lowerRoof = new THREE.Mesh(lowerRoofGeom);
+lowerRoof.position.set(6.995,-6.894 ,13.235);
+lowerRoof.rotation.set(0,THREE.Math.degToRad(45),THREE.Math.degToRad(180));
+
+let upperBody = new THREE.Mesh(upperBodyGeom);
+upperBody.position.set(6.985,-7.612 ,13.280);
+upperBody.rotation.set(0,0,THREE.Math.degToRad(180));
+
+let upperRoof = new THREE.Mesh(upperRoofGeom);
+upperRoof.position.set(7.025, -8.515,13.314);
+upperRoof.rotation.set(0,THREE.Math.degToRad(45),THREE.Math.degToRad(180));
+
+scene.add(houseBody, lowerRoof ,upperBody, upperRoof );
+
+//smaller house
+
+let smallHouseBodyGeom = new THREE.BoxBufferGeometry(1.72,2.60,2.04);
+let smallRoofGeom = new THREE.CylinderBufferGeometry(0,0.88,0.87,2,1);
+let smallRoofSide = new THREE.PlaneBufferGeometry(1.20,1.96,1,1);
+
+let smallHouseBody = new THREE.Mesh(smallHouseBodyGeom);
+smallHouseBody.position.set(10.555,-4.714,13.272);
+
+let smallRoof = new THREE.Mesh(smallRoofGeom);
+smallRoof.position.set(10.569,-6.437 ,12.249 );
+smallRoof.rotation.set(0,THREE.Math.degToRad( 90 ) ,Math.PI);
+
+let smallRoofSide1 = new THREE.Mesh(smallRoofSide);
+smallRoofSide1.position.set(10.992 , -6.462,13.188 );
+smallRoofSide1.rotation.set( THREE.Math.degToRad( -90.00 ),THREE.Math.degToRad(135.00 ) ,THREE.Math.degToRad( -180.00  ) );
+
+let smallRoofSide2 = new THREE.Mesh(smallRoofSide);
+smallRoofSide2.position.set( 10.144,-6.454 ,13.189 );
+smallRoofSide2.rotation.set( THREE.Math.degToRad( -90.00  ),THREE.Math.degToRad( -135.00 ) ,THREE.Math.degToRad( -180.00  ) );
+
+scene.add(smallHouseBody,smallRoof,smallRoofSide1,smallRoofSide2);
+
+//far right house
+let rightHouseBodyGeom = new THREE.BoxBufferGeometry( 3.18, 1.92,2.36 );
+let rightRoofGeom = new THREE.CylinderBufferGeometry(0.00,1.22 ,1.19,2,1 );
+let rightRoofSideGeom = new THREE.PlaneBufferGeometry(1.74,3.22 ,1,1 );
+
+let rightHouseBody = new THREE.Mesh(rightHouseBodyGeom );
+rightHouseBody.position.set(17.517, -3.873, 12.756);
+
+let rightRoof = new THREE.Mesh(rightRoofGeom);
+rightRoof.position.set(15.936, -5.426, 12.796);
+rightRoof.rotation.set(0,0,Math.PI);
+
+let rightRoofSide = new THREE.Mesh(rightRoofSideGeom);
+rightRoofSide.position.set(17.528,-5.425,12.186);
+rightRoofSide.rotation.set(THREE.Math.degToRad( 135.00 ),0,THREE.Math.degToRad( 90));
+
+scene.add(rightRoofSide,rightRoof,rightHouseBody);
+
+//clouds billboard
+let cloudsGeom = new THREE.PlaneBufferGeometry(150,30,1,1);
+let cloudsBillboard = new THREE.Mesh(cloudsGeom);
+cloudsBillboard.position.set(5.913,-6.707,23.278);
+cloudsBillboard.rotation.set(Math.PI,0,0);
+
+scene.add(cloudsBillboard);
 
 //noFace
 let loader = new THREE.GLTFLoader();
