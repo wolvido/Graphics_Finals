@@ -483,6 +483,11 @@ poleBlock4.position.set(4.433,-2.897,-0.785);
 
 scene.add(poleBlock1,poleBlock2,poleBlock3,poleBlock4);
 
+let poleTopGeom = new THREE.CylinderBufferGeometry(0.06,0.07,0.14,8,1);
+let poleTopCylinderGeom =
+let poleTopSphereGeom = 
+let poleTopPointGeom = 
+
 //bridge rails
 
 let longBlockRight = new THREE.Mesh(longBlockGeom);
@@ -534,7 +539,7 @@ let blockLeft = new THREE.Mesh(blockGeom);
 blockRight.position.set(3.964,-2.049 ,-0.142 );
 blockLeft.position.set( -1.011, -2.049 ,-0.142 );
 blockLeft.rotation.set(THREE.Math.degToRad(90),THREE.Math.degToRad(90),0);
-blockLeft.rotation.set(THREE.Math.degToRad(90),THREE.Math.degToRad(90),0);
+blockRight.rotation.set(THREE.Math.degToRad(90),THREE.Math.degToRad(90),0);
 
 let blockRight2 = new THREE.Mesh(blockGeom);
 let blockLeft2 = new THREE.Mesh(blockGeom);
@@ -582,8 +587,119 @@ scene.add(blockRight, blockLeft2, blockRight2, blockLeft3,
    blockRight3, blockLeft4,blockRight4, blockLeft5,
    blockRight5, blockLeft6,blockRight6, blockLeft7,
    blockRight7, blockLeft,);
+
+//bridge archs
+
+let archUpperRight = new THREE.Mesh(veryLongBlockGeom);
+let archUpperLeft = new THREE.Mesh(veryLongBlockGeom);
+archUpperRight.position.set( 3.956, -3.311, 0.445);
+archUpperLeft.position.set( -1.044,-3.311 ,0.445 );
+
+archUpperRight.rotation.set(THREE.Math.degToRad( 12.99 ) ,THREE.Math.degToRad( 90)  , 0)
+archUpperLeft.rotation.set(THREE.Math.degToRad( 12.99 ) ,THREE.Math.degToRad( 90)  , 0)
+
+let archUpperRight2 = new THREE.Mesh(veryLongBlockGeom);
+let archUpperLeft2 = new THREE.Mesh(veryLongBlockGeom);
+archUpperRight2.position.set(3.941, -3.741 ,2.958);
+archUpperLeft2.position.set(-1.036,-3.741 ,2.958);
+
+archUpperRight2.rotation.set(THREE.Math.degToRad( 6.86) ,THREE.Math.degToRad( 90)  , 0)
+archUpperLeft2.rotation.set(THREE.Math.degToRad( 6.86) ,THREE.Math.degToRad( 90)  , 0)
+
+let archUpperRight3 = new THREE.Mesh(veryLongBlockGeom);
+let archUpperLeft3 = new THREE.Mesh(veryLongBlockGeom);
+archUpperRight3.position.set(-1.041,-3.945 ,5.644);
+archUpperLeft3.position.set(3.962,-3.945 ,5.644);
+
+archUpperRight3.rotation.set(THREE.Math.degToRad( 2.42) ,THREE.Math.degToRad( 90)  , 0)
+archUpperLeft3.rotation.set(THREE.Math.degToRad( 2.42) ,THREE.Math.degToRad( 90)  , 0)
+
+let archUpperRight4 = new THREE.Mesh(veryLongBlockGeom);
+let archUpperLeft4 = new THREE.Mesh(veryLongBlockGeom);
+archUpperRight4.position.set(-0.995,-4.002 ,6.955);
+archUpperLeft4.position.set(3.970, -4.002,6.995);
+
+archUpperRight4.rotation.set(THREE.Math.degToRad( 2.91) ,THREE.Math.degToRad( 90)  , 0)
+archUpperLeft4.rotation.set(THREE.Math.degToRad( 2.91) ,THREE.Math.degToRad( 90)  , 0)
+
 //
 
+let archRight = new THREE.Mesh(veryLongBlockGeom);
+let archLeft = new THREE.Mesh(veryLongBlockGeom);
+archRight.position.set(3.956,-2.723  ,0.445 );
+archLeft.position.set( -1.044, -2.723  ,0.445 );
+
+archRight.rotation.set(THREE.Math.degToRad( 12.99 ) ,THREE.Math.degToRad( 90)  , 0)
+archLeft.rotation.set(THREE.Math.degToRad( 12.99 ) ,THREE.Math.degToRad( 90)  , 0)
+
+let archRight2 = new THREE.Mesh(veryLongBlockGeom);
+let archLeft2 = new THREE.Mesh(veryLongBlockGeom);
+archRight2.position.set(3.941, -3.142,2.958 );
+archLeft2.position.set( -1.036, -3.142,2.958  );
+
+archRight2.rotation.set(THREE.Math.degToRad( 6.86) ,THREE.Math.degToRad( 90)  , 0)
+archLeft2.rotation.set(THREE.Math.degToRad( 6.86) ,THREE.Math.degToRad( 90)  , 0)
+
+let archRight3 = new THREE.Mesh(veryLongBlockGeom);
+let archLeft3 = new THREE.Mesh(veryLongBlockGeom);
+archRight3.position.set(-1.041, -3.385,5.644 );
+archLeft3.position.set(3.962, -3.385,5.644);
+
+archRight3.rotation.set(THREE.Math.degToRad( 2.42) ,THREE.Math.degToRad( 90)  , 0)
+archLeft3.rotation.set(THREE.Math.degToRad( 2.42) ,THREE.Math.degToRad( 90)  , 0)
+
+let archRight4 = new THREE.Mesh(veryLongBlockGeom);
+let archLeft4 = new THREE.Mesh(veryLongBlockGeom);
+archRight4.position.set(3.970,-3.460 ,6.955 );
+archLeft4.position.set(-1.049,-3.460 ,6.955 );
+
+archRight4.rotation.set(THREE.Math.degToRad( 2.91) ,THREE.Math.degToRad( 90)  , 0)
+archLeft4.rotation.set(THREE.Math.degToRad( 2.91) ,THREE.Math.degToRad( 90)  , 0)
+
+//
+
+let archLowerRight = new THREE.Mesh(veryLongBlockGeom);
+let archLowerLeft = new THREE.Mesh(veryLongBlockGeom);
+archLowerRight.position.set(3.979 ,-2.245 ,0.445 );
+archLowerLeft.position.set(-1.021 ,-2.245 , 0.445);
+
+archLowerRight.rotation.set(THREE.Math.degToRad( 11.18) ,THREE.Math.degToRad( 90)  , 0)
+archLowerLeft.rotation.set(THREE.Math.degToRad( 11.18) ,THREE.Math.degToRad( 90)  , 0)
+
+let archLowerRight2 = new THREE.Mesh(veryLongBlockGeom);
+let archLowerLeft2 = new THREE.Mesh(veryLongBlockGeom);
+archLowerRight2.position.set(3.926,-2.658 ,2.981);
+archLowerLeft2.position.set(-1.058,-2.658 ,2.981);
+
+archLowerRight2.rotation.set(THREE.Math.degToRad( -155.73) ,THREE.Math.degToRad( 88.19)  , THREE.Math.degToRad( 163.30))
+archLowerLeft2.rotation.set(THREE.Math.degToRad(- 155.73) ,THREE.Math.degToRad( 88.19)  , THREE.Math.degToRad( 163.30))
+
+let archLowerRight3 = new THREE.Mesh(veryLongBlockGeom);
+let archLowerLeft3 = new THREE.Mesh(veryLongBlockGeom);
+archLowerRight3.position.set(3.883,-2.954 ,5.612);
+archLowerLeft3.position.set(-1.147,-2.954 ,5.612);
+
+archLowerRight3.rotation.set(THREE.Math.degToRad( -76.85 ) ,THREE.Math.degToRad( 89.75)  , THREE.Math.degToRad( 80.1));
+archLowerLeft3.rotation.set(THREE.Math.degToRad( -76.85 ) ,THREE.Math.degToRad( 89.75)  , THREE.Math.degToRad( 80.1));
+
+let archLowerRight4 = new THREE.Mesh(veryLongBlockGeom);
+let archLowerLeft4 = new THREE.Mesh(veryLongBlockGeom);
+archLowerRight4.position.set(3.859, -3.061,6.991);
+archLowerLeft4.position.set(-1.117,-3.061 ,6.991);
+
+archLowerRight4.rotation.set(THREE.Math.degToRad( -163.16) ,THREE.Math.degToRad( 88.19)  , THREE.Math.degToRad( 168.30))
+archLowerLeft4.rotation.set(THREE.Math.degToRad( -163.16) ,THREE.Math.degToRad( 88.19)  , THREE.Math.degToRad( 168.30))
+
+scene.add(archRight,archLeft,archRight2,archLeft2
+   ,archRight3,archLeft3 ,archRight4,archLeft4
+   ,archLowerRight,archLowerLeft
+   ,archLowerRight2,archLowerLeft2
+   ,archLowerRight3,archLowerLeft3
+   ,archLowerRight4,archLowerLeft4
+   ,archUpperRight,archUpperLeft
+   ,archUpperRight2,archUpperLeft2
+   ,archUpperRight3,archUpperLeft3
+   ,archUpperRight4,archUpperLeft4);
 
 
 //noFace
@@ -592,7 +708,7 @@ loader.load( 'assets/models/noFace/scene.gltf', function ( gltf ) {
    //manipulate models here
     model = gltf.scene;
     model.rotation.set(0,0,Math.PI);
-    model.scale.set(0.005,0.005,0.005);
+    model.scale.set(0.003,0.003,0.003);
     model.position.set(1.9,-2.5,2)
 
     model.castShadow = false;
