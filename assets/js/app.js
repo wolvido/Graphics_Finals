@@ -959,16 +959,51 @@ rightRoofSide.rotation.set(THREE.Math.degToRad( 135.00 ),0,THREE.Math.degToRad( 
 
 scene.add(rightRoofSide,rightRoof,rightHouseBody);
 
-//clouds billboard
+let pinkTexture = new THREE.TextureLoader().load('assets/textures/pink.jpg');
+let saturatedYellowTexture = new THREE.TextureLoader().load('assets/textures/saturated.png');
+let pinkMaterial =  new THREE.MeshBasicMaterial( { map: pinkTexture, side: THREE.DoubleSide});
+let saturatedMaterial =  new THREE.MeshBasicMaterial( { map: saturatedYellowTexture, side: THREE.DoubleSide});
+
+let pinkHouseGeom = new THREE.PlaneBufferGeometry(2.72,2.94,1,1);
+let pinkHouse = new THREE.Mesh(pinkHouseGeom,pinkMaterial);
+pinkHouse.position.set(-1.675,-4.104,16.627);
+
+let pinkRoofGeom = new THREE.CylinderBufferGeometry(0,1.44,0.89,2,1);
+let pinkRoof = new THREE.Mesh(pinkRoofGeom,pinkMaterial);
+pinkRoof.position.set(-1.689,-6.015 ,16.633);
+pinkRoof.rotation.set(THREE.Math.degToRad( 180 ),THREE.Math.degToRad( 90 ),0);
+
+let saturatedHouseGeom = new THREE.PlaneBufferGeometry(2.30,3.40);
+let saturatedHouse = new THREE.Mesh(saturatedHouseGeom,saturatedMaterial )
+saturatedHouse.position.set(-4.455,-4.062 ,16.792 );
+
+let saturatedRoofGeom = new THREE.PlaneBufferGeometry(2.38,1.48);
+let saturatedRoof = new THREE.Mesh(saturatedRoofGeom,saturatedMaterial);
+saturatedRoof.position.set(-4.478,-6.272, 16.837);
+saturatedRoof.rotation.set(THREE.Math.degToRad( -45  ),THREE.Math.degToRad( 180 ) ,THREE.Math.degToRad( 0  ));
+
+scene.add(saturatedHouse,saturatedRoof, pinkRoof,pinkHouse );
+
+let bigBushMaterial =  new THREE.MeshBasicMaterial( { map: longBushTexture, side: THREE.DoubleSide, transparent: true});
+
+let backgroundTreeGeom = new THREE.PlaneBufferGeometry(3.36,5.28,1,1);
+let backgroundTree = new THREE.Mesh(backgroundTreeGeom,bigBushMaterial);
+backgroundTree.position.set(14.598,-4.858 , 14.434);
+backgroundTree.rotation.set(0, Math.PI,THREE.Math.degToRad( 180 ));
+
+let backgroundTreeGeom2 = new THREE.PlaneBufferGeometry(3.36,3.82,1,1);
+let backgroundTree2 = new THREE.Mesh(backgroundTreeGeom2,bigBushMaterial);
+backgroundTree2.position.set(11.706,-4.858 , 14.434);
+backgroundTree2.rotation.set(0,Math.PI ,Math.PI);
+
+let backgroundTreeGeom3 = new THREE.PlaneBufferGeometry(3.74,1.68,1,1);
+let backgroundTree3 = new THREE.Mesh(backgroundTreeGeom3,bigBushMaterial);
+backgroundTree3.position.set(2.490,-3.32 , 16.855);
+backgroundTree3.rotation.set(0,Math.PI ,Math.PI);
+
+scene.add(backgroundTree,backgroundTree2,backgroundTree3);
+
 let cloudTexture = new THREE.TextureLoader().load('assets/textures/clouds.jpg');
-// let cloudMaterial = new THREE.MeshLambertMaterial({map: cloudTexture});
-
-// let cloudsGeom = new THREE.PlaneBufferGeometry(150,30,1,1);
-// let cloudsBillboard = new THREE.Mesh(cloudsGeom,cloudMaterial);
-// cloudsBillboard.position.set(5.913,-6.707,23.278);
-// cloudsBillboard.rotation.set(Math.PI,0,0);
-
-// scene.add(cloudsBillboard);
 
 //noFace
 let loader = new THREE.GLTFLoader();
