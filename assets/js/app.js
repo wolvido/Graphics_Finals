@@ -1022,13 +1022,7 @@ loader.load( 'assets/models/noFace/scene.gltf', function ( gltf ) {
     console.error( error );
  } );
 
- //to convert degrees to radians
-//  let rotTestGeom = new THREE.BoxBufferGeometry(1,2.60,1);
-//  let rotTest = new THREE.Mesh(rotTestGeom);
-//  rotTest.position.set(0,-7.338,4.150);
-//  let radi = THREE.Math.degToRad( 136 );
-//  rotTest.rotation.set(0,0,radi);
-// scene.add(rotTest);
+
  
 //lighting
 const color = 0xFFFFFF;
@@ -1037,21 +1031,16 @@ const light = new THREE.DirectionalLight(color, intensity,0,0.314,0,1);
 light.castShadow = true;
 light.position.set(-103.233, -27.655, -28.907);
 scene.add(light);
-var helper = new THREE.DirectionalLightHelper( light, 5 );
-scene.add( helper );
 var ambient = new THREE.AmbientLight( 0x404040 ); // soft white light
 scene.add( ambient );
-
-var helperShadow = new THREE.CameraHelper( light.shadow.camera );
-scene.add( helperShadow );
-
 
 // backgroud
 let textureSky = new THREE.TextureLoader().load('assets/textures/Sky.jpg')
 scene.background = (cloudTexture);
 
 // cam position
-camera.position.set(-0.34692271,-1.6264739,-4.7234988414);
+camera.position.set(1.4411,-3.115,-3.176);
+camera.rotation.set(0,Math.PI,0);
 
 function animate() {
    requestAnimationFrame( animate );
