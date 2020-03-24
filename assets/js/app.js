@@ -7,7 +7,6 @@ let renderer = new THREE.WebGLRenderer({
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 controls = new THREE.OrbitControls( camera,renderer.domElement);
-scene.add(new THREE.GridHelper(100, 100, 100));
 renderer.shadowMap.enabled = true;
 
 //colors
@@ -102,7 +101,7 @@ let redpaintMaterial2 = new THREE.MeshLambertMaterial({
 });
 
 let whiteTexture =  new THREE.TextureLoader().load('assets/textures/white.jpg');
-let whiteMaterial =  new THREE.MeshLambertMaterial( { map: whiteTexture});
+let whiteMaterial =  new THREE.MeshBasicMaterial( { map: whiteTexture});
 
 let foundationGeom = new THREE.BoxBufferGeometry(1.40,0.09,1.40,1,1,1);
 let foundation = new THREE.Mesh(foundationGeom, foundationMaterial);
@@ -172,20 +171,28 @@ let wallMaterial = new THREE.MeshLambertMaterial({
    map: wallTexture
 });
 
+let windowTexture = new THREE.TextureLoader().load('assets/textures/window2.png');
+let windowMaterial = new THREE.MeshLambertMaterial({
+   map: windowTexture,
+   opacity: 2,
+   transparent: true,
+
+});
+
 let bigBlockGeom = new THREE.BoxBufferGeometry(2.60,2.64,2.47);
 let bigBlock = new THREE.Mesh(bigBlockGeom,wallMaterial);
 bigBlock.position.set(-4.646,-3.267,10.242);
 
-let rightBlockGeom  = new THREE.BoxBufferGeometry(1,3,2.47);
-let rightBlock = new THREE.Mesh(rightBlockGeom);
-rightBlock.position.set(-2.867,-3.112,10.240);
+let rightBlockGeom  = new THREE.BoxBufferGeometry(1,1.72,2.47);
+let rightBlock = new THREE.Mesh(rightBlockGeom,windowMaterial);
+rightBlock.position.set(-2.867,-3.756,10.240);
 
 let upperRightBlockGeom  = new THREE.BoxBufferGeometry(1.60,1,2.47);
-let upperRightBlock = new THREE.Mesh(upperRightBlockGeom);
+let upperRightBlock = new THREE.Mesh(upperRightBlockGeom,windowMaterial);
 upperRightBlock.position.set(-3.909,-5.075,10.250);
 
 let upperLeftBlockGeom  = new THREE.BoxBufferGeometry(1,1,2.47);
-let upperLeftBlock = new THREE.Mesh(upperLeftBlockGeom);
+let upperLeftBlock = new THREE.Mesh(upperLeftBlockGeom,wallMaterial);
 upperLeftBlock.position.set(-5.186,-5.065,10.250);
 
 let roofGeom  = new THREE.CylinderBufferGeometry(0,2.14,1,4,1);
@@ -194,12 +201,12 @@ roof.position.set(-4.401,-6.064,10.299);
 roof.rotation.set(Math.PI,-Math.PI/4,0);
 
 let sideRoofGeom  = new THREE.PlaneBufferGeometry(1.10,3,1,1);
-let sideRoof = new THREE.Mesh(sideRoofGeom);
+let sideRoof = new THREE.Mesh(sideRoofGeom,roofMaterial);
 sideRoof.position.set(-2.874, -4.826, 10.506);
-sideRoof.rotation.set(-(Math.PI/2),-(Math.PI/8), 0);
+sideRoof.rotation.set(THREE.Math.degToRad(-90),THREE.Math.degToRad(158),THREE.Math.degToRad(-180));
 
 let fillerGeom  = new THREE.CylinderBufferGeometry(0,1,0.41,2,1);
-let filler = new THREE.Mesh(fillerGeom);
+let filler = new THREE.Mesh(fillerGeom,wallMaterial);
 filler.position.set(-3.352,-4.813,9.054);
 filler.rotation.set(Math.PI,-Math.PI/2,0);
 
@@ -545,7 +552,12 @@ scene.add(poleBlock1,poleBlock2,poleBlock3,poleBlock4);
 //pole top
 let topTexture = new THREE.TextureLoader().load('assets/textures/point.jpg');
 
-let topSteelMaterial = new THREE.MeshLambertMaterial({map: topTexture});
+let topSteelMaterial = new THREE.MeshLambertMaterial({
+   map: topTexture,
+   opacity: 2,
+   transparent: true,
+   depthWrite: false,
+   depthTest: false });
 
 let poleTopGeom = new THREE.CylinderBufferGeometry(0.08,0.05,0.14,8,1);
 let poleTopSphereGeom = new THREE.SphereBufferGeometry(0.04,8,6);
@@ -881,25 +893,30 @@ scene.add(archRight,archLeft,archRight2,archLeft2
 //big house
 let houseBodyGeom = new THREE.BoxBufferGeometry(4.50,3.54,2.47);
 let lowerRoofGeom = new THREE.CylinderBufferGeometry(2.02,3.14,0.48,4,1);
-let upperBodyGeom = new THREE.BoxBufferGeometry(2.78,1.14,2.70);
+let upperBodyGeom = new THREE.BoxBufferGeometry(1.66,1.14,2.70);
+let upperBodyLeftGeom = new THREE.BoxBufferGeometry(1.38,1.14,2.70);
 let upperRoofGeom = new THREE.CylinderBufferGeometry(0,2.30,0.68,4,1);
 
-let houseBody = new THREE.Mesh(houseBodyGeom);
+let houseBody = new THREE.Mesh(houseBodyGeom, wallMaterial);
 houseBody.position.set(6.998,-4.872 ,12.274 );
 
-let lowerRoof = new THREE.Mesh(lowerRoofGeom);
+let lowerRoof = new THREE.Mesh(lowerRoofGeom,roofMaterial);
 lowerRoof.position.set(6.995,-6.894 ,13.235);
 lowerRoof.rotation.set(0,THREE.Math.degToRad(45),THREE.Math.degToRad(180));
 
-let upperBody = new THREE.Mesh(upperBodyGeom);
-upperBody.position.set(6.985,-7.612 ,13.280);
+let upperBody = new THREE.Mesh(upperBodyGeom, wallMaterial);
+upperBody.position.set(7.591,-7.612 ,13.280);
 upperBody.rotation.set(0,0,THREE.Math.degToRad(180));
 
-let upperRoof = new THREE.Mesh(upperRoofGeom);
+let upperBodyLeft = new THREE.Mesh(upperBodyLeftGeom, windowMaterial);
+upperBodyLeft.position.set(6.243,-7.612 ,13.280);
+upperBodyLeft.rotation.set(0,0,THREE.Math.degToRad(180));
+
+let upperRoof = new THREE.Mesh(upperRoofGeom,roofMaterial);
 upperRoof.position.set(7.025, -8.515,13.314);
 upperRoof.rotation.set(0,THREE.Math.degToRad(45),THREE.Math.degToRad(180));
 
-scene.add(houseBody, lowerRoof ,upperBody, upperRoof );
+scene.add(houseBody,upperBodyLeft, lowerRoof ,upperBody, upperRoof );
 
 //smaller house
 
@@ -907,18 +924,18 @@ let smallHouseBodyGeom = new THREE.BoxBufferGeometry(1.72,2.60,2.04);
 let smallRoofGeom = new THREE.CylinderBufferGeometry(0,0.88,0.87,2,1);
 let smallRoofSide = new THREE.PlaneBufferGeometry(1.20,1.96,1,1);
 
-let smallHouseBody = new THREE.Mesh(smallHouseBodyGeom);
+let smallHouseBody = new THREE.Mesh(smallHouseBodyGeom,wallMaterial);
 smallHouseBody.position.set(10.555,-4.714,13.272);
 
-let smallRoof = new THREE.Mesh(smallRoofGeom);
+let smallRoof = new THREE.Mesh(smallRoofGeom,whiteMaterial);
 smallRoof.position.set(10.569,-6.437 ,12.249 );
 smallRoof.rotation.set(0,THREE.Math.degToRad( 90 ) ,Math.PI);
 
-let smallRoofSide1 = new THREE.Mesh(smallRoofSide);
+let smallRoofSide1 = new THREE.Mesh(smallRoofSide,roofMaterial);
 smallRoofSide1.position.set(10.992 , -6.462,13.188 );
 smallRoofSide1.rotation.set( THREE.Math.degToRad( -90.00 ),THREE.Math.degToRad(135.00 ) ,THREE.Math.degToRad( -180.00  ) );
 
-let smallRoofSide2 = new THREE.Mesh(smallRoofSide);
+let smallRoofSide2 = new THREE.Mesh(smallRoofSide,roofMaterial);
 smallRoofSide2.position.set( 10.144,-6.454 ,13.189 );
 smallRoofSide2.rotation.set( THREE.Math.degToRad( -90.00  ),THREE.Math.degToRad( -135.00 ) ,THREE.Math.degToRad( -180.00  ) );
 
@@ -929,14 +946,14 @@ let rightHouseBodyGeom = new THREE.BoxBufferGeometry( 3.18, 1.92,2.36 );
 let rightRoofGeom = new THREE.CylinderBufferGeometry(0.00,1.22 ,1.19,2,1 );
 let rightRoofSideGeom = new THREE.PlaneBufferGeometry(1.74,3.22 ,1,1 );
 
-let rightHouseBody = new THREE.Mesh(rightHouseBodyGeom );
+let rightHouseBody = new THREE.Mesh(rightHouseBodyGeom,wallMaterial );
 rightHouseBody.position.set(17.517, -3.873, 12.756);
 
-let rightRoof = new THREE.Mesh(rightRoofGeom);
+let rightRoof = new THREE.Mesh(rightRoofGeom,whiteMaterial);
 rightRoof.position.set(15.936, -5.426, 12.796);
 rightRoof.rotation.set(0,0,Math.PI);
 
-let rightRoofSide = new THREE.Mesh(rightRoofSideGeom);
+let rightRoofSide = new THREE.Mesh(rightRoofSideGeom,roofMaterial);
 rightRoofSide.position.set(17.528,-5.425,12.186);
 rightRoofSide.rotation.set(THREE.Math.degToRad( 135.00 ),0,THREE.Math.degToRad( 90));
 
@@ -983,7 +1000,7 @@ const color = 0xFFFFFF;
 const intensity = 2;
 const light = new THREE.DirectionalLight(color, intensity,0,0.314,0,1);
 light.castShadow = true;
-light.position.set(-28.002, -8.204, -7.978);
+light.position.set(-103.233, -27.655, -28.907);
 scene.add(light);
 var helper = new THREE.DirectionalLightHelper( light, 5 );
 scene.add( helper );
